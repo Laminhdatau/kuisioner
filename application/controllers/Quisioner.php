@@ -17,7 +17,7 @@ class Quisioner extends CI_Controller {
 		$this->load->view('template/header',$data);
 		$this->load->view('template/nav-mhs');
 		$this->load->view('kuis_dosen',$data);
-		$this->load->view('template/footer');
+		$this->load->view('template/footer-mhs');
 	}
 	
 
@@ -57,7 +57,7 @@ class Quisioner extends CI_Controller {
 		$this->load->view('template/header',$data);
 		$this->load->view('template/nav-mhs');
 		$this->load->view('kuis_mk',$data);
-		$this->load->view('template/footer');
+		$this->load->view('template/footer-mhs');
 	}
 
 
@@ -71,7 +71,7 @@ class Quisioner extends CI_Controller {
 		$this->load->view('template/header',$data);
 		$this->load->view('template/nav-mhs');
 		$this->load->view('kuis_mk',$data);
-		$this->load->view('template/footer');
+		$this->load->view('template/footer-mhs');
 	}
 
 	// =========================================END MATA KULIAH =======================================================

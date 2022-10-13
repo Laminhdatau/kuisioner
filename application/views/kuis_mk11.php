@@ -1,4 +1,4 @@
-<div class="container md-5 bg-white" >
+<div class="container md-5">
     <h3 class="text-center"><?= $title; ?></h3>
     <div class="row ">
     <div class="alert alert-dark mx-auto">
@@ -20,13 +20,13 @@
 </div>
 
 </div>         
-         <div class="container text-center mt-4 bg-white">
+         <div class="container text-center mt-4">
             <div class="row">
                 <div class="col col-lg-12">
                     <h3 class="">Riwayat Pengisian Kuisioner</h3>
                 </div>
                 <div class="col col-lg-12">
-                   <center> <p><b>INFO :</b> <span> <?= date(''); ?></span></p></center>
+                   <center> <p><b>INFO :</b> <span> Data diupdate setiap 1 jam</span></p></center>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@
     </div>
 </div>
 
-
+</div>
 <form action="<?= base_url('quisioner/sukses'); ?>" method="post">
 <!-- AWAL PERTANYAAN -->
     <div class="card">
@@ -134,9 +134,7 @@
     <h6>4) Kompetensi adalah kemampuan yang dicapai mahasiswa dari hasil belajar mata kuliah ini.</h6><br>
   
 </div>
-
 <hr>
-
 <div class="container mb-1 ">
     <div class="row">
             <h5 class="text-danger">PERHATIAN</h5>
