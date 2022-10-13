@@ -168,8 +168,8 @@ class Backend extends CI_Controller{
 // ===========================================BEGIN ANS QUISIONER================================================
 	
 	public function AnswerQuisioner(){
-		$data['title']="Siakad Politeknik Gorontalo | Jawaban Quis";
-		$data['jtable']="Jawaban Kuis";
+		$data['title']="Siakad Politeknik Gorontalo | Response Mahasiswa";
+		$data['jtable']="Response";
 		$data['answer']=$this->m_backend->getAnswerQuisioner();
 		$this->load->view('template/header',$data);
 		$this->load->view('template/sidebar');
@@ -178,21 +178,7 @@ class Backend extends CI_Controller{
 		$this->load->view('template/footer');
 	}
 
-	public function FormInputAnswerQuisioner(){
-		$data['title']="Siakad Politeknik Gorontalo | Tambah Jawaban Quis";
-		$data['jtable']="Jawaban Kuis";
-		$data['mhs']=$this->m_backend->getMhs();
-		$data['dosen']=$this->m_backend->getDosen();
-		$data['mk']=$this->m_backend->getMk();
-		$data['quisioner']=$this->m_backend->getQuisioner();
-		$data['comments']=$this->m_backend->getComments();
-		$data['answer']=$this->m_backend->getAnswer();
-		$this->load->view('template/header',$data);
-		$this->load->view('template/sidebar');
-		$this->load->view('template/navbar');
-		$this->load->view('backend/InputAnswerQuisioner');
-		$this->load->view('template/footer');
-	}
+
 
 	public function fungsiInputAnswerQuis(){
 		$nim = $this->input->post('nim');

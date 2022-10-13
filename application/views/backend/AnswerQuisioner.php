@@ -4,7 +4,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Table Kuis <small><?= $jtable; ?></small></h3>
+                <h3>Table <?= $jtable; ?></h3>
               </div>
             </div>
 
@@ -14,8 +14,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Kuis <small><?= $jtable; ?></small></h2>
-                    <h2><a href="<?= base_url('backend/formInputAnswerQuisioner'); ?>" class="btn btn-primary btn-xs ml-3">Tambah Kuis</a></h2>
+                    <h2><?= $jtable; ?></h2>
                     
                     <div class="clearfix"></div>
                   </div>
