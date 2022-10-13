@@ -4,7 +4,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Tamble Kuis <small>Dosen</small></h3>
+                <h3>Table Kuis <small><?= $jtable; ?></small></h3>
               </div>
             </div>
 
@@ -14,7 +14,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Kuis <small>Dosen</small></h2>
+                    <h2>Kuis <small><?= $jtable; ?></small></h2>
                     
                     <div class="clearfix"></div>
                   </div>
@@ -24,37 +24,38 @@
                             <div class="card-box table-responsive">
                     
                     <table id="datatable" class="table table-striped table-bordered" style="width:100%">
-                      <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Mahasiswa</th>
-                        <th>Nama Dosen</th>
-                        <th>Kuis</th>
-                        <th>Jawaban</th>
-                        <th>Komentar</th>
-                        <th>Waktu Dibuat</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                   <?php $no=1;
-                        foreach($answer as $a) : ?>
                      
-                    <tr>
-                        <td><?= $no++; ?></td>
-                        <td><?= $a->nama; ?></td>
-                        <td><?= $a->nama_dosen; ?></td>
-                        <td><?= $a->quisioner; ?></td>
-                        <td><?= $a->answer; ?></td>
-                        <td><?= $a->comments; ?></td>
-                        <td><?= $a->created_up; ?></td>
-                        <td>
-                            <a href="<?= base_url('quisioner'); ?>"><i class="fas fa-eye"></i></a>
-                            <a href="<?= base_url('backend/deleteAnswerQuis'); ?>/<?= $a->kd_answer_quisioner; ?>"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    <?php endforeach;  ?>
-                </tbody>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Mahasiswa</th>
+                                <th>Nama Dosen</th>
+                                <th>Kuis</th>
+                                <th>Jawaban</th>
+                                <th>Komentar</th>
+                                <th>Waktu Dibuat</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php $no=1;
+                                foreach($answer as $a) : ?>
+                            
+                            <tr>
+                                <td><?= $no++; ?></td>
+                                <td><?= $a->nama; ?></td>
+                                <td><?= $a->nama_dosen; ?></td>
+                                <td><?= $a->quisioner; ?></td>
+                                <td><?= $a->answer; ?></td>
+                                <td><?= $a->comments; ?></td>
+                                <td><?= $a->created_up; ?></td>
+                                <td>
+                                    <a href="<?= base_url('quisioner'); ?>"><i class="fas fa-eye"></i></a>
+                                    <a href="<?= base_url('backend/deleteAnswerQuis'); ?>/<?= $a->kd_answer_quisioner; ?>"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                            <?php endforeach;  ?>
+                        </tbody>
                     </table>
                   </div>
                   </div>

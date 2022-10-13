@@ -5,7 +5,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Table <small>Jenis</small></h3>
+                <h3>Table <small><?= $jtable; ?></small></h3>
               </div>
             </div>
 
@@ -15,7 +15,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Jenis Kuisioner</h2>
+                    <h2>Jenis <?= $jtable; ?></h2>
                     
                     <div class="clearfix"></div>
                   </div>

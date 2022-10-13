@@ -202,7 +202,6 @@ function editComments($kd_comments){
         $this->db->select('*');
         $this->db->from('t_answer_quisioner');
         $this->db->join('t_quisioner','t_answer_quisioner.kd_quisioner = t_quisioner.kd_quisioner');
-        $this->db->join('t_comments','t_answer_quisioner.kd_comments = t_comments.kd_comments');
         $this->db->join('t_answer','t_answer_quisioner.id_answer = t_answer.id_answer');
         $this->db->join('t_dosen_pengampu','t_answer_quisioner.kd_dosen_pengampu = t_dosen_pengampu.kd_dosen_pengampu');
         $this->db->join('t_mahasiswa','t_answer_quisioner.nim = t_mahasiswa.nim');
@@ -216,7 +215,6 @@ function editComments($kd_comments){
         $this->db->select('*');
         $this->db->from('t_answer_quisioner');
         $this->db->join('t_quisioner','t_answer_quisioner.kd_quisioner = t_quisioner.kd_quisioner');
-        $this->db->join('t_comments','t_answer_quisioner.kd_comments = t_comments.kd_comments');
         $this->db->join('t_answer','t_answer_quisioner.id_answer = t_answer.id_answer');
         $this->db->join('t_dosen_pengampu','t_answer_quisioner.kd_dosen_pengampu = t_dosen_pengampu.kd_dosen_pengampu');
         $this->db->join('t_mahasiswa','t_answer_quisioner.nim = t_mahasiswa.nim');

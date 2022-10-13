@@ -13,7 +13,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="<?= base_url('assets'); ?>/production/images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="<?= base_url('assets'); ?>/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -38,7 +38,7 @@
                       <li><a href="<?= base_url('backend/getAnswer'); ?>">Option Jawaban</a></li>
                       <li><a href="<?= base_url('backend/getJenis'); ?>">Jenis Kuis</a></li>
                       <li><a href="<?= base_url('backend/AnswerQuisioner'); ?>">Hasil Kuis</a></li>
-                      <li><a href="<?= base_url('backend/hasilmk'); ?>">Hasil Kuis MataKuliah</a></li>
+                      <li><a href="#">Grafik</a></li>
                     </ul>
                   </li>
                   
