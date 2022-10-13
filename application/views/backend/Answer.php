@@ -40,9 +40,11 @@
                         <td><?= $no++; ?></td>
                         <td><?= $a->answer; ?></td>
                         <td>
-                            <a href="<?= base_url('quisioner'); ?>"><i class="fas fa-eye"></i></a>
-                            <a href="<?= base_url('backend/formeditanswer'); ?>/<?= $a->id_answer; ?>"><i class="fas fa-sync"></i></a> 
-                            <a href="<?= base_url('backend/deleteAnswer'); ?>/<?= $a->id_answer; ?>"><i class="fas fa-trash-alt"></i></a>
+
+                            <a href="<?= base_url('quisioner'); ?>" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+                            <a href="<?= base_url('backend/formeditanswer'); ?>/<?= $a->id_answer; ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                            <a href="<?= base_url('backend/deleteAnswer'); ?>/<?= $a->id_answer; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+
                         </td>
                     </tr>
                     <?php endforeach;  ?>

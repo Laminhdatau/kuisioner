@@ -14,8 +14,8 @@ class Backend extends CI_Controller{
 
 	public function quisDosen()
 	{
-		$data['title']="Siakad Politeknik Gorontalo | Quis Dosen";
-		$data['jtable']="Quis Dosen";
+		$data['title']="Siakad Politeknik Gorontalo | Kuis Dosen";
+		$data['jtable']="Kuis Dosen";
 		$data['data']=$this->m_backend->getQuisionerDosen();
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
@@ -24,8 +24,8 @@ class Backend extends CI_Controller{
         $this->load->view('template/footer');
 	}
 	public function formInputQuisDosen(){
-		$data['title']="Siakad Politeknik Gorontalo | Tambah Quis";
-		$data['jtable']="Quis Dosen";
+		$data['title']="Siakad Politeknik Gorontalo | Tambah Kuis";
+		$data['jtable']="Kuis Dosen";
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
         $this->load->view('template/navbar');
@@ -52,8 +52,8 @@ class Backend extends CI_Controller{
 	
 
 	public function formEditQuisDosen($kd_quis){
-		$data['title']="Siakad Politeknik Gorontalo | Update Quis Dosen";
-		$data['jtable']="Quis Dosen";
+		$data['title']="Siakad Politeknik Gorontalo | Update Kuis Dosen";
+		$data['jtable']="Kuis Dosen";
 		$data['editquis']=$this->m_backend->editQuisDetail($kd_quis);
 		$data['jenisquis']=$this->m_backend->getJenis();
 		$this->load->view('template/header',$data);
@@ -96,7 +96,7 @@ class Backend extends CI_Controller{
 	public function quisMataKuliah()
 	{
 		$data['title']="Siakad Politeknik Gorontalo | Mata Kuliah";
-		$data['jtable']="Quis Mata Kuliah";
+		$data['jtable']="Kuis Mata Kuliah";
 		$data['data']=$this->m_backend->getQuisionerMataKuliah();
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
@@ -106,7 +106,7 @@ class Backend extends CI_Controller{
 	}
 	public function formInputQuisMk(){
 		$data['title']="Siakad Politeknik Gorontalo | Tambah Mata Kuliah";
-		$data['jtable']="Quis Mata Kuliah";
+		$data['jtable']="Kuis Mata Kuliah";
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
         $this->load->view('template/navbar');
@@ -169,7 +169,7 @@ class Backend extends CI_Controller{
 	
 	public function AnswerQuisioner(){
 		$data['title']="Siakad Politeknik Gorontalo | Jawaban Quis";
-		$data['jtable']="Jawaban Quis";
+		$data['jtable']="Jawaban Kuis";
 		$data['answer']=$this->m_backend->getAnswerQuisioner();
 		$this->load->view('template/header',$data);
 		$this->load->view('template/sidebar');
@@ -180,7 +180,7 @@ class Backend extends CI_Controller{
 
 	public function FormInputAnswerQuisioner(){
 		$data['title']="Siakad Politeknik Gorontalo | Tambah Jawaban Quis";
-		$data['jtable']="Jawaban Quis";
+		$data['jtable']="Jawaban Kuis";
 		$data['mhs']=$this->m_backend->getMhs();
 		$data['dosen']=$this->m_backend->getDosen();
 		$data['mk']=$this->m_backend->getMk();
@@ -292,7 +292,7 @@ class Backend extends CI_Controller{
     public function getJenis()
 	{
 		$data['title']="Siakad Politeknik Gorontalo | Jenis Quisioner";
-		$data['jtable']="Jenis Quisioner";
+		$data['jtable']="Jenis Kuisioner";
 		$data['jenis']=$this->m_backend->getJenis();
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
@@ -303,7 +303,7 @@ class Backend extends CI_Controller{
 
 	public function formInputjenis_quisioner(){
 		$data['title']="Siakad Politeknik Gorontalo | Tambah Jenis Quisioner";
-		$data['jtable']="Jenis Quisioner";
+		$data['jtable']="Jenis Kuisioner";
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
         $this->load->view('template/navbar');
@@ -323,7 +323,7 @@ class Backend extends CI_Controller{
 
 	public function formEditJenis($id_jenis){
 		$data['title']="Siakad Politeknik Gorontalo | Update Jenis Quisioner";
-		$data['jtable']="Jenis Quisioner";
+		$data['jtable']="Jenis Kuisioner";
 		$data['Jenis']=$this->m_backend->editJenis($id_jenis);
 		$this->load->view('template/header',$data);
 		$this->load->view('template/sidebar');

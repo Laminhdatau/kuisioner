@@ -50,9 +50,11 @@
                                 <td><?= $a->comments; ?></td>
                                 <td><?= $a->created_up; ?></td>
                                 <td>
-                                    <a href="<?= base_url('quisioner'); ?>"><i class="fas fa-eye"></i></a>
-                                    <a href="<?= base_url('backend/deleteAnswerQuis'); ?>/<?= $a->kd_answer_quisioner; ?>"><i class="fas fa-trash-alt"></i></a>
-                                </td>
+                                    <a href="<?= base_url('quisioner'); ?>" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+                                    <a href="<?= base_url('backend/deleteAnswerQuis'); ?>/<?= $a->kd_answer_quisioner; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+
+                               
+                                  </td>
                             </tr>
                             <?php endforeach;  ?>
                         </tbody>

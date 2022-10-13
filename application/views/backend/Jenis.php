@@ -39,9 +39,9 @@
                         <td><?= $no++; ?></td>
                         <td><?= $j->jenis_quisioner; ?></td>
                         <td>
-                            <a href="<?= base_url('quisioner'); ?>"><i class="fas fa-eye"></i></a>
-                            <a href="<?= base_url('backend/formeditJenis'); ?>/<?= $j->id_jenis_quisioner; ?>"><i class="fas fa-sync"></i></a> 
-                            <a href="<?= base_url('backend/deleteJenis'); ?>/<?= $j->id_jenis_quisioner; ?>"><i class="fas fa-trash-alt"></i></a>
+                            <a href="<?= base_url('quisioner'); ?>" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+                            <a href="<?= base_url('backend/formeditJenis'); ?>/<?= $j->id_jenis_quisioner; ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                            <a href="<?= base_url('backend/deleteJenis'); ?>/<?= $j->id_jenis_quisioner; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                         </td>
                     </tr>
                     <?php endforeach;  ?>
