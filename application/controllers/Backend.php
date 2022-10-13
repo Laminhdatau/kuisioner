@@ -324,7 +324,7 @@ class Backend extends CI_Controller{
 	public function formEditJenis($id_jenis){
 		$data['title']="Siakad Politeknik Gorontalo | Update Jenis Quisioner";
 		$data['jtable']="Jenis Kuisioner";
-		$data['Jenis']=$this->m_backend->editJenis($id_jenis);
+		$data['jenis']=$this->m_backend->editJenis($id_jenis);
 		$this->load->view('template/header',$data);
 		$this->load->view('template/sidebar');
 		$this->load->view('template/navbar');

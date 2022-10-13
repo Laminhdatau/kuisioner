@@ -5,7 +5,7 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3>Form Elements</h3>
+							<h3>Form Edit Jenis</h3>
 						</div>
 					</div>
 					<div class="clearfix"></div>
@@ -13,20 +13,20 @@
 						<div class="col-md-12 col-sm-12 ">
 							<div class="x_panel">
 								<div class="x_title">
-									<h2>Form Tambah Jenis</h2>
+									<h2>Form Edit</h2>
 									
 									<div class="clearfix"></div>
 								</div>
 								<div class="x_content">
 									<br />
-									<form method="post" action="<?= base_url('backend/fungsiInputjenis_quisioner'); ?>" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+									<form method="post" action="<?= base_url('backend/fungsiEditjenis_quisioner'); ?>/<?= $jenis->id_jenis_quisioner; ?>" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="jenis">Jenis<span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="kuis">Kuis<span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-                                                <input type="hidden" id="jenis" name="id_jenis_quisioner"  class="form-control ">
-												<input type="text" id="jenis" name="jenis_quisioner" required="required" class="form-control ">
+                                                <input type="hidden" id="kuis" name="id_jenis_quisioner"  class="form-control " value="<?= $jenis->id_jenis_quisioner; ?>">
+												<input type="text" id="kuis" name="jenis_quisioner" required="required" class="form-control " value="<?= $jenis->jenis_quisioner; ?>">
 											</div>
 										</div>
 										<div class="ln_solid"></div>
