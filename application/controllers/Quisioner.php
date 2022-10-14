@@ -24,8 +24,8 @@ class Quisioner extends CI_Controller {
 	public function InputQuisDosen(){
 
 		$kd_quis=$this->input->post('kd_quisioner');
-		$nim=$this->input->post('nim');
-		$dosen=$this->input->post('kd_dosen_pengampu');
+		$nim=$this->m_quisioner->getMhsDetail()->result();
+		$dosen=$this->m_quisioner->getDosenDetail()->result();
 		$kd_answer=$this->input->post('id_answer');
 		$comments=$this->input->post('comments');
 		$waktu=$this->input->post('waktu');
