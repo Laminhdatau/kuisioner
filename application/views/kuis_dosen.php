@@ -40,6 +40,7 @@
 
 
 <!-- AWAL PERTANYAAN -->
+<?php if(!empty($dosen)){ ?>
 <div class="card">
     <div class="card-header">
     <table class="table table-bordered">
@@ -59,10 +60,10 @@
     <tbody>
       <td><?= $no++; ?></td>
       <td><input type="hidden" name="kd_quisioner" ><?= $q->quisioner; ?> </td>
-      <td><input type="radio" name="id_answer" value="1" ></td>
-      <td><input type="radio" name="id_answer" value="2"></td>
-      <td><input type="radio" name="id_answer" value="3"></td>
-      <td><input type="radio" name="id_answer" value="4"></td>
+      <td><input type="radio" id="id_answer1<?= $no++; ?>" name="id_answer[<?= $no++; ?>]" value="1" ></td>
+      <td><input type="radio" id="id_answer2<?= $no++; ?>" name="id_answer[<?= $no++; ?>]" value="2"></td>
+      <td><input type="radio" id="id_answer3<?= $no++; ?>" name="id_answer[<?= $no++; ?>]" value="3"></td>
+      <td><input type="radio" id="id_answer4<?= $no++; ?>" name="id_answer[<?= $no++; ?>]" value="4"></td>
   </tbody>
   <?php endforeach; ?>
   </div>
@@ -113,5 +114,6 @@
         </div>
     </div>
     </form>
+    <?php } ?>
 </div>
 </div>

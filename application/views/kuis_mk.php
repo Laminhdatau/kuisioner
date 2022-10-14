@@ -26,14 +26,9 @@
                     <h3 class="">Riwayat Pengisian Kuisioner</h3>
                 </div>
                 <div class="col col-lg-12">
-                   <center> <p><b>INFO :</b> <span> <?= date(''); ?></span></p></center>
+                   <center> <p><b>INFO :</b> <span> <?= date('m'); ?></span></p></center>
                 </div>
             </div>
-
-
-
-        
-
             <div class="container container-fluid">
                 <div class="row">
                     <table class="table table-striped table-bordered table-hover table-responsive-xl">
@@ -78,6 +73,8 @@
 
 <form action="<?= base_url('quisioner/sukses'); ?>" method="post">
 <!-- AWAL PERTANYAAN -->
+<!-- start kuis -->
+
     <div class="card">
     <div class="card-header">
     <table class="table table-striped table-bordered table-hover table-responsive-xl">
