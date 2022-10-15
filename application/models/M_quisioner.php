@@ -62,4 +62,12 @@ class M_quisioner extends CI_Model{
         return $query->row();
     }
     // ======================================END DOSEN===================================================
+
+            //   =======================================BEGIN MAHASISWA=========================================
+    function getMhs()
+    {
+        $query=$this->db->query("SELECT * FROM t_mahasiswa where nim");
+        return $query->row();
+    }
+    // ======================================END MAHASISWA===================================================
 }
