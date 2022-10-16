@@ -13,9 +13,8 @@
 <div class="container text-center">
     <div class="row">
         <div class="alert alert-dark mx-auto ">
-            <h5>TI &#45; PEMROGRAMAN MOBILE &#45; &#91; A &#93;</h5>
-
-
+            <?php foreach($mk as $mk); ?>
+            <h5>TI &#45; <?= $mk->mk; ?> &#45; &#91; <?= $mk->kd_mk; ?>&#93;</h5>
             <h5><?= $dosen->nama_dosen; ?> &#45; &#91; <?= $dosen->kd_dosen_pengampu; ?> &#93;</h5>
         </div>
       
@@ -40,7 +39,7 @@
 
 
 <!-- AWAL PERTANYAAN -->
-<?php if(!empty($dosen)){ ?>
+<?php if(!empty($quisdosen)){ ?>
 <div class="card">
     <div class="card-header">
     <table class="table table-bordered">
@@ -56,16 +55,30 @@
   </thead>
   </div>
   <div class="card-body">
-  <?php $no=1;foreach($quisdosen as $q): ?>
+    
+  <?php $no=1;foreach($quisdosen as $q){ ?>
     <tbody>
-      <td><?= $no++; ?></td>
-      <td><input type="hidden" name="kd_quisioner" ><?= $q->quisioner; ?> </td>
-      <td><input type="radio" id="id_answer1<?= $no++; ?>" name="id_answer[<?= $no++; ?>]" value="1" ></td>
-      <td><input type="radio" id="id_answer2<?= $no++; ?>" name="id_answer[<?= $no++; ?>]" value="2"></td>
-      <td><input type="radio" id="id_answer3<?= $no++; ?>" name="id_answer[<?= $no++; ?>]" value="3"></td>
-      <td><input type="radio" id="id_answer4<?= $no++; ?>" name="id_answer[<?= $no++; ?>]" value="4"></td>
-  </tbody>
-  <?php endforeach; ?>
+      <td><?= $no ?></td>
+      <td><label for="kd_quisioner"><input type="hidden" id="kd_kuisioner" name="kd_quisioner" value="<?= $q->kd_quisioner; ?>"><?= $q->quisioner; ?></label></td>
+        
+            <td class="custom-radio text-center">
+                <input  type="radio" id="id_answer1<?=$no?>" name="id_answer<?= $no ?>" name="id_answer" value="1" class="custom-control-input" required>
+                <label class="custom-control-label" for="id_answer1<?=$no?>"></label>
+            </td>
+             <td class="custom-radio text-center">
+                <input type="radio" id="id_answer2<?=$no?>" name="id_answer<?= $no ?>" name="id_answer" value="2" class="custom-control-input" required>
+                <label class="custom-control-label" for="id_answer2<?=$no?>"></label>
+            </td>
+             <td class="custom-radio text-center">
+                <input type="radio" id="id_answer3<?=$no?>" name="id_answer<?= $no ?>" name="id_answer" value="3" class="custom-control-input" required>
+                <label class="custom-control-label" for="id_answer3<?=$no?>"></label>
+            </td>
+             <td class="custom-radio text-center">
+                <input type="radio" id="id_answer4<?=$no?>" name="id_answer<?= $no ?>" name="id_answer" value="4" class="custom-control-input" required>
+                <label class="custom-control-label" for="id_answer4<?=$no?>"></label>
+            </td>
+        
+  </tbody><?php $no++;} ?>
   </div>
 </table>
 </div>

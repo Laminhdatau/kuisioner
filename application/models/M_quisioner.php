@@ -5,12 +5,12 @@ class M_quisioner extends CI_Model{
     // =======================================BEGIN QUIS DOSEN=====================================================
     function getQuisionerDosen()
     {
-        $query = $this->db->query("SELECT q.kd_quisioner,q.quisioner,q.status,q.created_up,jq.id_jenis_quisioner,jq.jenis_quisioner FROM t_quisioner q JOIN t_jenis_quisioner jq ON (q.id_jenis_quisioner=jq.id_jenis_quisioner) WHERE jq.id_jenis_quisioner='1' ORDER BY id_jenis_quisioner LIMIT 10");
+        $query = $this->db->query("SELECT q.kd_quisioner,q.quisioner,q.status,q.created_up,jq.id_jenis_quisioner,jq.jenis_quisioner FROM t_quisioner q JOIN t_jenis_quisioner jq ON (q.id_jenis_quisioner=jq.id_jenis_quisioner) WHERE jq.id_jenis_quisioner='1' AND q.status='1' ORDER BY id_jenis_quisioner LIMIT 10");
         return $query->result();
     }
 
-    function inputQuisionerDosen($data)
-    {
+    function inputQuisionerDosen($data){
+    
         $this->db->select('*');
         $this->db->from('t_answer_quisioner');
         $this->db->set($data);
@@ -23,8 +23,15 @@ class M_quisioner extends CI_Model{
     // ========================================BEGIN QUIS MK========================================================
    function getQuisionerMk()
     {
-        $query = $this->db->query("SELECT q.kd_quisioner,q.quisioner,q.status,q.created_up,jq.id_jenis_quisioner,jq.jenis_quisioner FROM t_quisioner q JOIN t_jenis_quisioner jq ON (q.id_jenis_quisioner=jq.id_jenis_quisioner) WHERE jq.id_jenis_quisioner='2' ORDER BY id_jenis_quisioner LIMIT 10");
+        $query = $this->db->query("SELECT q.kd_quisioner,q.quisioner,q.status,q.created_up,jq.id_jenis_quisioner,jq.jenis_quisioner FROM t_quisioner q JOIN t_jenis_quisioner jq ON (q.id_jenis_quisioner=jq.id_jenis_quisioner) WHERE jq.id_jenis_quisioner='2'AND q.status='1' ORDER BY id_jenis_quisioner LIMIT 10");
         return $query->result();
+    }
+    function inputQuisionerMk($data){
+    
+        $this->db->select('*');
+        $this->db->from('t_answer_quisioner');
+        $this->db->set($data);
+        $this->db->insert($this->db->dbprefix . 't_answer_quisioner');
     }
       // ====================================END QUIS DOSEN===========================================================
 
@@ -56,18 +63,28 @@ class M_quisioner extends CI_Model{
          return $query;
     }
         //   =======================================BEGIN DOSEN=========================================
-    function getDosen()
+    function getDosenDetail()
     {
-        $query=$this->db->query("SELECT * FROM t_dosen_pengampu where kd_dosen_pengampu");
+       $query=$this->db->query("SELECT * from t_dosen_pengampu");
         return $query->row();
     }
+    function getDosenArr()
+    {
+       return $this->db->get('t_dosen_pengampu')->result();
+    }
+    
     // ======================================END DOSEN===================================================
 
             //   =======================================BEGIN MAHASISWA=========================================
-    function getMhs()
+    function getMhsDetail()
     {
-        $query=$this->db->query("SELECT * FROM t_mahasiswa where nim");
+        $query=$this->db->query("SELECT * from t_mahasiswa");
         return $query->row();
     }
     // ======================================END MAHASISWA===================================================
+    function getMk(){
+       
+return $query=$this->db->get('t_mk')->result();
+    }
+
 }

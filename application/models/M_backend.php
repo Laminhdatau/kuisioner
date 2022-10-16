@@ -210,18 +210,7 @@ function editComments($kd_comments){
         return $query->result();
     }
 
-    function inputAnswerQuisioner($data)
-    {
-        $this->db->select('*');
-        $this->db->from('t_answer_quisioner');
-        $this->db->join('t_quisioner','t_answer_quisioner.kd_quisioner = t_quisioner.kd_quisioner');
-        $this->db->join('t_answer','t_answer_quisioner.id_answer = t_answer.id_answer');
-        $this->db->join('t_dosen_pengampu','t_answer_quisioner.kd_dosen_pengampu = t_dosen_pengampu.kd_dosen_pengampu');
-        $this->db->join('t_mahasiswa','t_answer_quisioner.nim = t_mahasiswa.nim');
-        $this->db->join('t_mk','t_answer_quisioner.kd_mk = t_mk.kd_mk');
-        $this->db->set($data);
-        $this->db->insert($this->db->dbprefix . 't_answer_quisioner');
-    }
+   
     function deleteAnswerQuis($kd_answer_quisioner){
     $this->db->where('kd_answer_quisioner',$kd_answer_quisioner);
     $this->db->delete('t_answer_quisioner');

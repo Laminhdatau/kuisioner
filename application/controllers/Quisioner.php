@@ -1,4 +1,7 @@
 <?php
+
+use LDAP\Result;
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Quisioner extends CI_Controller {
@@ -11,9 +14,9 @@ class Quisioner extends CI_Controller {
 		
 		$data['title']="Quisioner Dosen Pengampuh";
 		$data['quisdosen']=$this->m_quisioner->getQuisionerDosen();
-		
 		$data['option']=$this->m_quisioner->getAnswer();
-		$data['dosen']=$this->m_quisioner->getDosen();
+		$data['dosen']=$this->m_quisioner->getDosenDetail();
+		$data['mk']=$this->m_quisioner->getMk();
 		$this->load->view('template/header',$data);
 		$this->load->view('template/nav-mhs');
 		$this->load->view('kuis_dosen',$data);
@@ -24,8 +27,9 @@ class Quisioner extends CI_Controller {
 	public function InputQuisDosen(){
 
 		$kd_quis=$this->input->post('kd_quisioner');
-		$nim=$this->m_quisioner->getMhsDetail()->result();
-		$dosen=$this->m_quisioner->getDosenDetail()->result();
+		$nim=$this->session->userdata('nama');
+		$mk=$this->input->post('kd_mk');
+		$dosen=$this->session->userdata('kd_dosen_pegampu');;
 		$kd_answer=$this->input->post('id_answer');
 		$comments=$this->input->post('comments');
 		$waktu=$this->input->post('waktu');
@@ -33,17 +37,16 @@ class Quisioner extends CI_Controller {
 		$arr=[
 			'kd_quisioner'=>$kd_quis,
 			'nim'=>20501049,
-			'kd_dosen_pengampu'=>00101,
-			'id_answer'=>$kd_answer,
+			'kd_mk'=>1,
+			'kd_dosen_pengampu'=>121211,
+			'id_answer'=>1,
 			'comments'=>$comments,
-			'waktu'=>$waktu
+			'waktu'=>date('Y-m-d H:i:s')
 		];
 		$this->db->set('kd_answer_quisioner','UUID()',false);
 		$this->m_quisioner->inputQuisionerDosen($arr);
 		
-		var_dump($arr);
-		die;
-		// redirect(base_url());
+		 redirect(base_url('Quisioner/'));
 	}
 
 // ==============================================END QUISIONER DOSEN======================================================
@@ -54,10 +57,37 @@ class Quisioner extends CI_Controller {
 		$data['title']="Quisioner Mata Kuliah";
 		$data['quismk']=$this->m_quisioner->getQuisionerMk();
 		$data['option']=$this->m_quisioner->getAnswer();
+		$data['dosen']=$this->m_quisioner->getDosenArr();
+		$data['mk']=$this->m_quisioner->getMk();
 		$this->load->view('template/header',$data);
 		$this->load->view('template/nav-mhs');
 		$this->load->view('kuis_mk',$data);
 		$this->load->view('template/footer-mhs');
+	}
+
+	public function InputQuisMk(){
+
+		$kd_quis=$this->input->post('kd_quisioner');
+		$nim=$this->session->userdata('nama');
+		$mk=$this->input->post('kd_mk');
+		$dosen=$this->session->userdata('kd_dosen_pegampu');;
+		$kd_answer=$this->input->post('id_answer');
+		$comments=$this->input->post('comments');
+		$waktu=$this->input->post('waktu');
+
+		$arr=[
+			'kd_quisioner'=>$kd_quis,
+			'nim'=>20501049,
+			'kd_mk'=>1,
+			'kd_dosen_pengampu'=>121211,
+			'id_answer'=>3,
+			'comments'=>$comments,
+			'waktu'=>date('Y-m-d H:i:s')
+		];
+		$this->db->set('kd_answer_quisioner','UUID()',false);
+		$this->m_quisioner->inputQuisionerMk($arr);
+		
+		 redirect(base_url('Quisioner/'));
 	}
 
 
@@ -75,6 +105,7 @@ class Quisioner extends CI_Controller {
 	}
 
 	// =========================================END MATA KULIAH =======================================================
+
 
 
 }

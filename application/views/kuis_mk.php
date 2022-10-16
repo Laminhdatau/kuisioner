@@ -26,7 +26,7 @@
                     <h3 class="">Riwayat Pengisian Kuisioner</h3>
                 </div>
                 <div class="col col-lg-12">
-                   <center> <p><b>INFO :</b> <span> <?= date('m'); ?></span></p></center>
+                   <center> <p><b>INFO :</b><span>Pengisian kuisioner di di update setiap 1 jam</span></p></center>
                 </div>
             </div>
             <div class="container container-fluid">
@@ -48,12 +48,27 @@
                        
                         <tbody>
                             <tr>
-                            <th scope="row">1</th>
-                            <td scope="row">Framework</td>
-                            <td scope="row">Saiful Bahri Musa</td>
-                            <td scope="row">Selesai</td>
-                            <td scope="row">Belum Selesai</td>
+                                <?php
+                                for($no=1;$no<3;$no++): ?>
+                            <th scope="row"><?= $no; ?></th>
+                            <td scope="row">
+                                <select name="mk" class="form-control">
+                               <?php foreach($mk as $m): ?>
+                                    <option value="<?= $m->kd_mk; ?>"><?= $m->mk; ?></option>         
+                                <?php endforeach; ?>                
+                            </select>
+                            </td>
+                            <td scope="row">
+                            <select name="nama_dosen" class="form-control">
+                               <?php   foreach($dosen as $d): ?>
+                                    <option value="<?= $d->kd_dosen_pengampu; ?>"><?= $d->nama_dosen; ?></option>         
+                                <?php endforeach; ?>                
+                            </select>
+                            </td>
+                            <td scope="row"><a href="<?= base_url('quisioner'); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Isi</a></td>
+                            <td scope="row"><a href="<?= base_url('quisioner/getQuisMk'); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Isi </a></td>
                             </tr>
+                            <?php endfor; ?>
                         </tbody>
                         
                     </table>
@@ -64,17 +79,20 @@
     <div class="alert alert-dark mx-auto">
         <label for="select">Mata Kuliah : </label>
         <select id="select">
-                <option value="">Pilih</option>
-                <option value="">KD MK - MATAKULIAH - DOSEN</option>
+                <?php foreach($mk as $m): ?>
+                    <?php foreach($dosen as $d): ?>
+                <option value=""><?= $m->kd_mk; ?>- <?= $m->mk; ?> - <?= $d->nama_dosen; ?></option>
+                <?php endforeach; ?>
+                <?php endforeach; ?>
         </select>
     </div>
 </div>
 
 
-<form action="<?= base_url('quisioner/sukses'); ?>" method="post">
+<form action="<?= base_url('quisioner/inputQuisMk'); ?>" method="post">
 <!-- AWAL PERTANYAAN -->
 <!-- start kuis -->
-
+<?php if(!empty($quismk)){ ?>
     <div class="card">
     <div class="card-header">
     <table class="table table-striped table-bordered table-hover table-responsive-xl">
@@ -90,19 +108,30 @@
   </thead>
   </div>
   <div class="card-body">
-  <tbody>
-    <?php $no=1; foreach($quismk as $q): ?>
-    <tr>
-      <th scope="row"><?= $no++; ?></th>
-      <td><?= $q->quisioner; ?></td>
-      <td><input type="radio"></td>
-      <td><input type="radio"></td>
-      <td><input type="radio"></td>
-      <td><input type="radio"></td>
-    </tr>
-    <?php endforeach; ?>
-    
-  </tbody>
+  
+    <?php $no=1;foreach($quismk as $q){ ?>
+     <tbody> 
+        <td><?= $no ?></td>
+      <td><label for="kd_quisioner"><input type="hidden" id="kd_kuisioner" name="kd_quisioner" value="<?= $q->kd_quisioner; ?>"><?= $q->quisioner; ?></label></td>
+        
+            <td class="custom-radio text-center">
+                <input  type="radio" id="id_answer1<?=$no?>" name="id_answer<?= $no ?>" name="id_answer" value="1" class="custom-control-input" required>
+                <label class="custom-control-label" for="id_answer1<?=$no?>"></label>
+            </td>
+             <td class="custom-radio text-center">
+                <input type="radio" id="id_answer2<?=$no?>" name="id_answer<?= $no ?>" name="id_answer" value="2" class="custom-control-input" required>
+                <label class="custom-control-label" for="id_answer2<?=$no?>"></label>
+            </td>
+             <td class="custom-radio text-center">
+                <input type="radio" id="id_answer3<?=$no?>" name="id_answer<?= $no ?>" name="id_answer" value="3" class="custom-control-input" required>
+                <label class="custom-control-label" for="id_answer3<?=$no?>"></label>
+            </td>
+             <td class="custom-radio text-center">
+                <input type="radio" id="id_answer4<?=$no?>" name="id_answer<?= $no ?>" name="id_answer" value="4" class="custom-control-input" required>
+                <label class="custom-control-label" for="id_answer4<?=$no?>"></label>
+            </td>
+        
+  </tbody><?php $no++;} ?>
   </div>
 </table>
 </div>
@@ -115,7 +144,7 @@
        </div>
        <div class="card-body" >
             <div class="col col-lg-12">
-                <textarea cols="50" rows="10"></textarea>
+                <textarea cols="50" name="comments" rows="10"></textarea>
             </div>
             
        </div>
@@ -151,6 +180,7 @@
             <a href="" class="btn btn-dark">RESET</a>
             <button type="submit" class="btn btn-info">SIMPAN</button> 
         </div>
-    </div>
+    </div><?php } ?>
 </div>
+
 </form>

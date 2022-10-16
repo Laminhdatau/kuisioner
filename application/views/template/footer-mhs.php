@@ -2,6 +2,19 @@
 
     <!-- jQuery -->
     <script src="<?= base_url('assets'); ?>/vendors/jquery/dist/jquery.min.js"></script>
+    
+      	<script>
+            $(document).ready(function(){
+            $("#form-input").css("display","none"); //Menghilangkan form-input ketika pertama kali dijalankan
+            $(".answer").click(function(){ //Memberikan even ketika class detail di klik (class detail ialah class radio button)
+            if ($("input[name='id_answer']:checked").val() == "1" ) { //Jika radio button "berbeda" dipilih maka tampilkan form-inputan
+            $("#form-input").slideDown("fast"); //Efek Slide Down (Menampilkan Form Input)
+            } else {
+            $("#form-input").slideUp("fast"); //Efek Slide Up (Menghilangkan Form Input)
+            }
+            });
+            });
+        </script>
     <!-- Bootstrap -->
    <script src="<?= base_url('assets'); ?>/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- FastClick -->

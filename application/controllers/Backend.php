@@ -180,27 +180,8 @@ class Backend extends CI_Controller{
 
 
 
-	public function fungsiInputAnswerQuis(){
-		$nim = $this->input->post('nim');
-		$kd_mk=$this->input->post('kd_mk');
-		$kd_dospeng=$this->input->post('kd_dosen_pengampu');
-		$kd_quis=$this->input->post('kd_quisioner');
-		$id_answer=$this->input->post('id_answer');
-		$comments=$this->input->post('comments');
-		$waktu=$this->input->post('waktu');
-		$data=[
-			'nim'=>$nim,
-			'kd_mk'=>$kd_mk,
-			'kd_dosen_pengampu'=>$kd_dospeng,
-			'kd_quisioner'=>$kd_quis,
-			'id_answer'=>$id_answer,
-			'comments'=>$comments,
-			'waktu'=>$waktu
-		];
-		$this->db->set('kd_answer_quisioner','UUID()',FALSE);
-		$this->m_backend->inputAnswerQuisioner($data);
-		redirect(base_url('backend/FormInputAnswerQuisioner'));
-
+	public function getDetail($id){
+		
 		
 	}
 
@@ -337,27 +318,12 @@ class Backend extends CI_Controller{
 // ===========================================END MAHASISWA==========================================================================
 
 // ========================================HASIL MK==============================================================================
-	// public function HasilDosen(){
-	// 	$data['title']="Diagram Dosen";
-	// 	$x['data']=$this->m_backend->getGrafikQuisMk();
-	// 	$this->load->view('template/header',$data);
-	// 	$this->load->view('template/sidebar');
-	// 	$this->load->view('template/navbar');
-	// 	$this->load->view('backend/DiagramDosen');
-	// 	$this->load->view('template/footer',$x);
-	// }
+	
+
 // ========================================END HASIL MK========================================================================
 
 // ========================================BEGIN HASIL DOSEN=====================================================================
-	// public function asilMk(){
-	// 	$data['title']="Grafik Mk";
-    //     $x['data']=$this->m_backend->getGrafikQuisMk();
-	// 	$this->load->view('template/header',$data);
-	// 	$this->load->view('template/sidebar');
-	// 	$this->load->view('template/navbar');
-	// 	$this->load->view('backend/DiagramMk',$x);
-	// 	$this->load->view('template/footer',$x);
-	// }
+
 
 
 	public function HasilMk(){
