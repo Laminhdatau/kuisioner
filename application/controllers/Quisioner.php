@@ -17,7 +17,7 @@ class Quisioner extends CI_Controller {
 		$data['option']=$this->m_quisioner->getAnswer();
 		$data['dosen']=$this->m_quisioner->getDosenDetail();
 		$data['mk']=$this->m_quisioner->getMk();
-		$this->load->view('template/header',$data);
+		$this->load->view('template/header_mhs',$data);
 		$this->load->view('template/nav-mhs');
 		$this->load->view('kuis_dosen',$data);
 		$this->load->view('template/footer-mhs');
@@ -59,7 +59,8 @@ class Quisioner extends CI_Controller {
 		$data['option']=$this->m_quisioner->getAnswer();
 		$data['dosen']=$this->m_quisioner->getDosenArr();
 		$data['mk']=$this->m_quisioner->getMk();
-		$this->load->view('template/header',$data);
+		$this->load->view('template/header_mhs',$data);
+		$this->load->view('template/sidebar');
 		$this->load->view('template/nav-mhs');
 		$this->load->view('kuis_mk',$data);
 		$this->load->view('template/footer-mhs');
@@ -99,6 +100,7 @@ class Quisioner extends CI_Controller {
 	public function getMk(){
 		$data['title']="Quisioner Mata Kuliah";
 		$this->load->view('template/header',$data);
+		$this->load->view('template/sidebar',$data);
 		$this->load->view('template/nav-mhs');
 		$this->load->view('kuis_mk',$data);
 		$this->load->view('template/footer-mhs');

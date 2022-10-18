@@ -1,47 +1,64 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!-- <script type="text/javascript">
+function printContent() {
+  // console.log(1);
+  $.ajax({
+    type: 'POST',
+    url: "https://siakad.poligon.ac.id/krs/cetak_krs/",
+    data: 'ipk=' + $('#bobot').val(),
+    success: function(datas, textStatus, jqXHR) {
+      var restorepage = document.body.innerHTML;
+      var printcontent = datas;
+      document.body.innerHTML = printcontent;
+      window.print();
+      document.body.innerHTML = restorepage;
+    }
+  });
+}
+</script> -->
+            </div>
+        </div>
+    </section>
 
+    <!-- Jquery Core Js -->
+    <script src="<?= base_url('assets'); ?>/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="<?= base_url('assets'); ?>/plugins/bootstrap/js/bootstrap.js"></script>
+    <!-- Select Plugin Js -->
+    <script src="<?= base_url('assets'); ?>/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="<?= base_url('assets'); ?>/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="<?= base_url('assets'); ?>/plugins/node-waves/waves.js"></script>
+    <!-- Autosize Plugin Js -->
+    <script src="<?= base_url('assets'); ?>/plugins/autosize/autosize.js"></script>
+    <!-- Moment Plugin Js -->
+    <script src="<?= base_url('assets'); ?>/plugins/momentjs/moment.js"></script>
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script
+        src="<?= base_url('assets'); ?>/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js">
+    </script>
+    <!-- Custom Js -->
+    <script src="<?= base_url('assets'); ?>/js/admin.js"></script>
 
-    <!-- jQuery -->
-    <script src="<?= base_url('assets'); ?>/vendors/jquery/dist/jquery.min.js"></script>
-    
-      	<script>
-            $(document).ready(function(){
-            $("#form-input").css("display","none"); //Menghilangkan form-input ketika pertama kali dijalankan
-            $(".answer").click(function(){ //Memberikan even ketika class detail di klik (class detail ialah class radio button)
-            if ($("input[name='id_answer']:checked").val() == "1" ) { //Jika radio button "berbeda" dipilih maka tampilkan form-inputan
-            $("#form-input").slideDown("fast"); //Efek Slide Down (Menampilkan Form Input)
-            } else {
-            $("#form-input").slideUp("fast"); //Efek Slide Up (Menghilangkan Form Input)
-            }
-            });
-            });
-        </script>
-    <!-- Bootstrap -->
-   <script src="<?= base_url('assets'); ?>/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- FastClick -->
-    <script src="<?= base_url('assets'); ?>/vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="<?= base_url('assets'); ?>/vendors/nprogress/nprogress.js"></script>
-    <!-- iCheck -->
-    <script src="<?= base_url('assets'); ?>/vendors/iCheck/icheck.min.js"></script>
-    <!-- Datatables -->
-    <script src="<?= base_url('assets'); ?>/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/jszip/dist/jszip.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="<?= base_url('assets'); ?>/js/pages/ui/dialogs.js"></script>
 
-    <!-- Custom Theme Scripts -->
-    <script src="<?= base_url('assets'); ?>/build/js/custom.min.js"></script>
+    <script src="<?= base_url('assets'); ?>/js/pages/forms/basic-form-elements.js"></script>
 
-  </body>
+    <!-- Demo Js -->
+    <script src="<?= base_url('assets'); ?>/js/demo.js"></script>
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="<?= base_url('assets'); ?>/plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="<?= base_url('assets'); ?>/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js">
+    </script>
+
+    <script src="<?= base_url('assets'); ?>/js/pages/tables/jquery-datatable.js"></script>
+
+    <!-- SweetAlert Plugin Js -->
+    <script src="<?= base_url('assets'); ?>/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Bootstrap Notify Plugin Js -->
+    <script src="<?= base_url('assets'); ?>/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+</body>
+
 </html>
