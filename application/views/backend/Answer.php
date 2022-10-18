@@ -16,7 +16,6 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Jenis <?= $jtable; ?></h2>
-                    <h2><a href="<?= base_url('backend/formInputAnswer'); ?>" class="btn btn-primary btn-xs ml-3">Tambah Kuis</a></h2>
                     
                     <div class="clearfix"></div>
                   </div>
@@ -25,12 +24,12 @@
                           <div class="col-sm-12">
                             <div class="card-box table-responsive">
                     
-                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                    <table id="datatable" class="table table-striped table-bordered" style="width:70%">
                       <thead>
                     <tr>
                         <th>No</th>
                         <th>Objektif</th>
-                        <th>Aksi</th>
+                        <th><a href="<?= base_url('backend/formInputAnswer'); ?>" class="btn btn-primary btn-xs ml-3">+</a></th>
                     </tr>
                 </thead>
                 <tbody>

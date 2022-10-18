@@ -17,10 +17,12 @@ class Quisioner extends CI_Controller {
 		$data['option']=$this->m_quisioner->getAnswer();
 		$data['dosen']=$this->m_quisioner->getDosenDetail();
 		$data['mk']=$this->m_quisioner->getMk();
-		$this->load->view('template/header_mhs',$data);
-		$this->load->view('template/nav-mhs');
-		$this->load->view('kuis_dosen',$data);
-		$this->load->view('template/footer-mhs');
+		$this->load->view('template/header',$data);
+		$this->load->view('template/sidebar');
+		$this->load->view('template/navbar');
+		
+		$this->load->view('frontend/mahasiswa/kuis_dosen',$data);
+		$this->load->view('template/footer');
 	}
 	
 
@@ -35,11 +37,13 @@ class Quisioner extends CI_Controller {
 		$waktu=$this->input->post('waktu');
 
 		$arr=[
-			'kd_quisioner'=>$kd_quis,
+			'kd_quisioner'=>[
+				
+			],
 			'nim'=>20501049,
 			'kd_mk'=>1,
 			'kd_dosen_pengampu'=>121211,
-			'id_answer'=>1,
+			'id_answer'=>$kd_answer,
 			'comments'=>$comments,
 			'waktu'=>date('Y-m-d H:i:s')
 		];
@@ -59,11 +63,12 @@ class Quisioner extends CI_Controller {
 		$data['option']=$this->m_quisioner->getAnswer();
 		$data['dosen']=$this->m_quisioner->getDosenArr();
 		$data['mk']=$this->m_quisioner->getMk();
-		$this->load->view('template/header_mhs',$data);
+		$this->load->view('template/header',$data);
+		
 		$this->load->view('template/sidebar');
-		$this->load->view('template/nav-mhs');
-		$this->load->view('kuis_mk',$data);
-		$this->load->view('template/footer-mhs');
+		$this->load->view('template/navbar');
+		$this->load->view('frontend/mahasiswa/kuis_mk',$data);
+		$this->load->view('template/footer');
 	}
 
 	public function InputQuisMk(){
@@ -81,7 +86,7 @@ class Quisioner extends CI_Controller {
 			'nim'=>20501049,
 			'kd_mk'=>1,
 			'kd_dosen_pengampu'=>121211,
-			'id_answer'=>3,
+			'id_answer'=>$kd_answer,
 			'comments'=>$comments,
 			'waktu'=>date('Y-m-d H:i:s')
 		];
@@ -100,10 +105,10 @@ class Quisioner extends CI_Controller {
 	public function getMk(){
 		$data['title']="Quisioner Mata Kuliah";
 		$this->load->view('template/header',$data);
+		$this->load->view('template/navbar');
 		$this->load->view('template/sidebar',$data);
-		$this->load->view('template/nav-mhs');
 		$this->load->view('kuis_mk',$data);
-		$this->load->view('template/footer-mhs');
+		$this->load->view('template/footer');
 	}
 
 	// =========================================END MATA KULIAH =======================================================

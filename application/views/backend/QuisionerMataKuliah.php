@@ -14,8 +14,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><small><?= $jtable; ?></small></h2>
-                    <h2><a href="<?= base_url('backend/formInputQuisMk'); ?>" class="btn btn-primary btn-xs ml-3">Tambah Kuis</a></h2>
+                    <h2 class="float-left"><?= $jtable; ?>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -30,7 +29,7 @@
                             <th>Quis</th>
                             <th>Status</th>
                             <th>Jenis</th>
-                            <th>Aksi</th>
+                            <th></h2><a href="<?= base_url('backend/formInputQuisMk'); ?>" class="btn btn-primary btn-xs ml-3 ">+</a></th>
                         </tr>
                       </thead>
 

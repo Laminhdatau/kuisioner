@@ -6,7 +6,7 @@ class M_quisioner extends CI_Model{
     function getQuisionerDosen()
     {
         $query = $this->db->query("SELECT q.kd_quisioner,q.quisioner,q.status,q.created_up,jq.id_jenis_quisioner,jq.jenis_quisioner FROM t_quisioner q JOIN t_jenis_quisioner jq ON (q.id_jenis_quisioner=jq.id_jenis_quisioner) WHERE jq.id_jenis_quisioner='1' AND q.status='1' ORDER BY id_jenis_quisioner LIMIT 10");
-        return $query->result();
+        return $query->result_array();
     }
 
     function inputQuisionerDosen($data){
@@ -14,7 +14,7 @@ class M_quisioner extends CI_Model{
         $this->db->select('*');
         $this->db->from('t_answer_quisioner');
         $this->db->set($data);
-        $this->db->insert($this->db->dbprefix . 't_answer_quisioner');
+        $this->db->insert('t_answer_quisioner');
     }
 
 
@@ -24,7 +24,7 @@ class M_quisioner extends CI_Model{
    function getQuisionerMk()
     {
         $query = $this->db->query("SELECT q.kd_quisioner,q.quisioner,q.status,q.created_up,jq.id_jenis_quisioner,jq.jenis_quisioner FROM t_quisioner q JOIN t_jenis_quisioner jq ON (q.id_jenis_quisioner=jq.id_jenis_quisioner) WHERE jq.id_jenis_quisioner='2'AND q.status='1' ORDER BY id_jenis_quisioner LIMIT 10");
-        return $query->result();
+        return $query->result_array();
     }
     function inputQuisionerMk($data){
     
