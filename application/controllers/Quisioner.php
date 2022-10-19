@@ -10,8 +10,6 @@ class Quisioner extends CI_Controller {
 	// ======================================================BEGIN QUIS DOSEN======================================================
 	public function index()
 	{
-
-		
 		$data['title']="Quisioner Dosen Pengampuh";
 		$data['quisdosen']=$this->m_quisioner->getQuisionerDosen();
 		$data['option']=$this->m_quisioner->getAnswer();

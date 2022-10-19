@@ -58,60 +58,57 @@
 
                                     <h3>Riwayat Pengisian Kuisioner</h3>
                                     <h5><b>Info:</b> Data diupdate setiap jam</h5>
-                                    <form action="">
                                       <!-- ================================= -->
-                                      <table class="table table-striped">
-                                      <thead class=""> 
-                                           <tr>
-                                              <th scope="col" rowspan="2">NO</th>
-                                              <th scope="col" rowspan="2">MATA KULIAH</th>
-                                              <th scope="col" rowspan="2">DOSEN PENGAMPU</th>
-                                              <th scope="col" colspan="2">KUISIONER</th>
-                                              <tr>
-                                                  <th>DOSEN</th>
-                                                  <th>MATA KULIAH</th>
-                                              </tr>
-                                            </tr>
-                                      </thead>
-                                      <tbody>
-                                          <tr>
-                                            <td>1</td>
-                                            <td>FM1</td>
-                                            <td width="55%">SAIFUL BAHRI MUSA<td>
-                                            <td>
-                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            </td>
-                                            <td>
-                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            </td>
-                                          </tr>
-                                              <tr>
-                                            <td>1</td>
-                                            <td>FM1</td>
-                                            <td width="55%">SAIFUL BAHRI MUSA<td>
-                                            <td>
-                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            </td>
-                                            <td>
-                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            </td>
-                                          </tr>
-                                          </tr>
-                                              <tr>
-                                            <td>1</td>
-                                            <td>FM1</td>
-                                            <td width="55%">SAIFUL BAHRI MUSA<td>
-                                            <td>
-                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            </td>
-                                            <td>
-                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            </td>
-                                          </tr>
-                                      </tbody>
-                                      </table>
+
+            <div class="clearfix"></div>
+             <div class="col-md-12 col-sm-12  ">
+                <div class="x_panel">
+
+                  <div class="x_content">
+                    <div class="table-responsive">
+                      <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                            <tr class="headings">
+                              <th class="column-title" rowspan="1">NO </th>
+                              <th class="column-title" rowspan="1">MATA KULIAH </th>
+                              <th class="column-title" rowspan="1">DOSEN PENGAMPUH </th>
+                              <th class="column-title" colspan="2">KUISIONER </th>
+                           </tr> 
+                           <tr>
+                              <th colspan="3"></th>
+                              <th class="column-title">Mata Kuliah </th>
+                              <th class="column-title">Dosen </th>
+                           </tr> 
+                              
+                        </thead>
+
+                        <tbody>
+                          <tr class="even pointer">
+                            <td class=" ">1</td>
+                            <td class=" ">Frameword</td>
+                            <td class=" ">Saiful Bahri Musa</td>
+                            <td class=" ">
+                              <a href="" class="fa fa-edit"></a>
+                            </td>
+                            <td class="last">
+                              <a href="" class="fa fa-edit"></a>
+                            </td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+							
+						
+                  </div>
+                </div>
+            </div>
+        <!-- /page content -->
+
                                     <!-- ========================================= -->
-                                    </form>
+                                   
+
+
                               </div>
                               
                             </div>
