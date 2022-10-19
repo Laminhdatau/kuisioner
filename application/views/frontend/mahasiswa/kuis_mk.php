@@ -79,10 +79,10 @@
                                             <td>FM1</td>
                                             <td width="55%">SAIFUL BAHRI MUSA<td>
                                             <td>
-                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>  </a>
                                             </td>
                                             <td>
-                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>  </a>
                                             </td>
                                           </tr>
                                               <tr>
@@ -90,10 +90,10 @@
                                             <td>FM1</td>
                                             <td width="55%">SAIFUL BAHRI MUSA<td>
                                             <td>
-                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> </a>
                                             </td>
                                             <td>
-                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>  </a>
                                             </td>
                                           </tr>
                                           </tr>
@@ -102,10 +102,10 @@
                                             <td>FM1</td>
                                             <td width="55%">SAIFUL BAHRI MUSA<td>
                                             <td>
-                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>  </a>
                                             </td>
                                             <td>
-                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>  </a>
                                             </td>
                                           </tr>
                                       </tbody>
