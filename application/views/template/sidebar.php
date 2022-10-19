@@ -1,26 +1,18 @@
 
-        <body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="<?= base_url(); ?>" class="site_title"><i class="fa fa-home"></i><?= $title; ?></span></a>
+        <body class="nav-md" style="background-color:#e19ee4;">
+    <div class="container body" >
+      <div class="main_container" style="background-color:#e19ee4;">
+        <div class="col-md-3 left_col" style="background-color:#e19ee4;">
+          <div class="left_col scroll-view"  style="background-color:#e19ee4;">
+            <div class="navbar nav_title" style=" background-color:#75006a;">
+              <a href="<?= base_url(); ?>" class="site_title">
+              <img src="<?= base_url('assets'); ?>/images/poltekgo.png" width="35px">
+              <?= $title; ?></span></a>
             </div>
 
             <div class="clearfix"></div>
 
-            <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="<?= base_url('assets'); ?>/images/user.png" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Administrator</span>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
-            <br />
+           
 
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -86,7 +78,21 @@
               </div>
 
             </div>
+            <style>
+              .sidebar-footer {
+                heigth: 78%;
+                
+              }
+            </style>
             <!-- /sidebar menu -->
-
+                <div class="sidebar-footer  hidden-small">
+                </div>
           </div>
         </div>
+
+
+
+
+
+
+  
