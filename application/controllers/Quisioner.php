@@ -72,24 +72,24 @@ class Quisioner extends CI_Controller {
 	public function InputQuisMk(){
 
 		$kd_quis=$this->input->post('kd_quisioner');
-		$nim=$this->session->userdata('nama');
+		$nim=$this->session->userdata(array('nama'))->row_array();
 		$mk=$this->input->post('kd_mk');
 		$dosen=$this->session->userdata('kd_dosen_pegampu');;
 		$kd_answer=$this->input->post('id_answer');
 		$comments=$this->input->post('comments');
 		$waktu=$this->input->post('waktu');
 
-		$arr=[
+		$data=[
 			'kd_quisioner'=>$kd_quis,
 			'nim'=>20501049,
-			'kd_mk'=>1,
-			'kd_dosen_pengampu'=>121211,
+			'kd_mk'=>$mk,
+			'kd_dosen_pengampu'=>$dosen,
 			'id_answer'=>$kd_answer,
 			'comments'=>$comments,
 			'waktu'=>date('Y-m-d H:i:s')
 		];
 		$this->db->set('kd_answer_quisioner','UUID()',false);
-		$this->m_quisioner->inputQuisionerMk($arr);
+		$this->m_quisioner->inputQuisionerMk($data);
 		
 		 redirect(base_url('Quisioner/'));
 	}

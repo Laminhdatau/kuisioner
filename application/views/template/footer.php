@@ -2,8 +2,10 @@
         <footer>
         </footer>
         <!-- /footer content -->
+        
       </div>
     </div>
+    <div class="footer footer_fixed bg-dark" heigth="50px">SIAKAD POLTEKGO 3.0.0</div>
 
     <!-- jQuery -->
     <script src="<?= base_url('assets'); ?>/vendors/jquery/dist/jquery.min.js"></script>

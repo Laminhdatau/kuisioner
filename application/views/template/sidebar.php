@@ -4,23 +4,75 @@
       <div class="main_container" style="background-color:#e19ee4;">
         <div class="col-md-3 left_col" style="background-color:#e19ee4;">
           <div class="left_col scroll-view"  style="background-color:#e19ee4;">
+
             <div class="navbar nav_title" style=" background-color:#75006a;">
-              <a href="<?= base_url(); ?>" class="site_title">
-              <img src="<?= base_url('assets'); ?>/images/poltekgo.png" width="35px">
-              <?= $title; ?></span></a>
+              <a href="<?= base_url(); ?>" class="site_title" >
+                <img class="ml-1" src="<?= base_url('assets'); ?>/images/poltekgo.png" width="30px">
+                <span class="h6">SISTEM INFORMASI AKADEMIK</span>
+              </a>
             </div>
 
-            <div class="clearfix"></div>
+            <div class="clearfix"></div><br>
 
            
-
+            <style >
+              .nav.side-menu > li > a, .nav.child_menu > li > a 
+              {
+                color: black;
+                font-weight: 500;
+              }              
+                .nav.side-menu > li.current-page, .nav.side-menu > li.active 
+              {
+                  border-right: 5px solid #75006A;
+                  border-right-color: #75006A;
+                  border-right-style: solid;
+                  border-right-width: 5px;
+                  color: white;
+              }
+              .nav.side-menu > li.active > a 
+              {
+                text-shadow: rgba(0,0,0,0.25) 0 -1px 0;
+                background: -webkit-gradient(linear, left top, left bottom, from(#334556), to(#2C4257)),#2A3F54;
+                background: #75006a;
+                -webkit-box-shadow: rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0;
+                box-shadow: rgba(0,0,0,0.25) 0 1px 0,inset rgba(255,255,255,0.16) 0 1px 0;
+              }
+              .nav-md ul.nav.child_menu li::after 
+              {
+                border-left: 1px solid #a36d00;
+                bottom: 0;
+                content: "";
+                left: 27px;
+                position: absolute;
+                top: 0;
+              }
+                .nav-md ul.nav.child_menu li::before 
+                {
+                background: #a36d00;
+                bottom: auto;
+                content: "";
+                height: 8px;
+                left: 23px;
+                margin-top: 15px;
+                position: absolute;
+                right: auto;
+                width: 8px;
+                z-index: 1;
+                border-radius: 50%;
+                }
+                .h6, h6 
+                {
+                font-size: 9pt;
+                }
+              
+            </style>
+<!-- =================================================ADMIN -->
             <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu ">
               <div class="menu_section">
-                <h3>Admin</h3>
-                <ul class="nav side-menu">
-                  <li><a href="<?= base_url(); ?>"><i class="fa fa-home"></i> Dashboard</a>
-                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav side-menu ">
+                  <li><a href="<?= base_url(); ?>"><i class="fa fa-home fa-fw text-black-50"></i> Dashboard</a>
+                  <li><a><i class="fa fa-table fa-fw text-black-50"></i> Tables <span class="fa fa-chevron-down text-black-50"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('backend/quisdosen'); ?>">Kuis Dosen</a></li>
                       <li><a href="<?= base_url('backend/quismatakuliah'); ?>">Kuis Mata Kuliah</a></li>
@@ -31,13 +83,15 @@
                   </li>
                   
                 </ul>
+<!-- =======================================END -->
 
 
-                 <h3>User</h3>
+
+                <!-- =================================USER -->
                 <ul class="nav side-menu">
                   <li>
                     <a>
-                      <i class="fa fa-table"></i> Kuisioner <span class="fa fa-chevron-down"></span>
+                      <i class="fa fa-user fa-fw text-black-50"></i> Kuisioner <span class="fa fa-chevron-down text-black-50"></span>
                     </a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('quisioner'); ?>">Kuis Dosen</a></li>
@@ -46,13 +100,15 @@
                   </li>
                   
                 </ul>
+<!-- =========================================END -->
 
 
-                <h3>Dosen</h3>
+<!-- =============================================DOSEN -->
+
                 <ul class="nav side-menu">
                   <li>
                     <a>
-                      <i class="fa fa-table"></i> Grafik <span class="fa fa-chevron-down"></span>
+                      <i class="fa fa-table fa-fw text-black-50"></i> Grafik <span class="fa fa-chevron-down text-black-50"></span>
                     </a>
                     <ul class="nav child_menu">
                       <li><a href="#">Grafik</a></li>
@@ -62,11 +118,15 @@
                   
                 </ul>
 
-                <h3>Upm</h3>
-                <ul class="nav side-menu">
+
+
+                <!-- =====================================END -->
+
+
+                <ul class="nav side-menu ">
                   <li>
                     <a>
-                      <i class="fa fa-table"></i> Grafik <span class="fa fa-chevron-down"></span>
+                      <i class="fa fa-table fa-fw text-black-50"></i> Grafik <span class="fa fa-chevron-down text-black-50"></span>
                     </a>
                     <ul class="nav child_menu">
                       <li><a href="#">Grafik</a></li>
@@ -78,12 +138,7 @@
               </div>
 
             </div>
-            <style>
-              .sidebar-footer {
-                heigth: 78%;
-                
-              }
-            </style>
+           
             <!-- /sidebar menu -->
                 <div class="sidebar-footer  hidden-small">
                 </div>
