@@ -1,0 +1,1 @@
+akses tidak ada

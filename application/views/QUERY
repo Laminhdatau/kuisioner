@@ -1,0 +1,1 @@
+SELECT aq.*,m.nama,k.mk,d.nama_dosen,q.quisioner,a.answer from t_answer_quisioner aq join t_mahasiswa m on aq.nim=m.nim join t_mk k on aq.kd_mk=k.kd_mk join t_dosen_pengampu d on aq.kd_dosen_pengampu=d.kd_dosen_pengampu join t_quisioner q on aq.kd_quisioner=q.kd_quisioner join t_answer a on aq.id_answer=a.id_answer ORDER by kd_answer_quisioner='UUID()' ASC;

@@ -2,19 +2,14 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>Table <small><?= $jtable; ?></small></h3>
-              </div>
-            </div>
-
+           
             <div class="clearfix"></div>
             
             <div class="row">
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><?= $jtable; ?></h2>
+                    <h2>Page : <?= $jtable; ?></h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -38,9 +33,9 @@
                         <td><?= $no++; ?></td>
                         <td><?= $j->jenis_quisioner; ?></td>
                         <td>
-                            <a href="<?= base_url('backend/getQuis'); ?>" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                            <a href="<?= base_url('backend/formEditJenis'); ?>/<?= $j->id_jenis_quisioner; ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                            <a href="<?= base_url('backend/deleteJenis'); ?>/<?= $j->id_jenis_quisioner; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                            <a href="<?= base_url('backend/getQuis'); ?>" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i></a>
+                            <a href="<?= base_url('backend/formEditJenis'); ?>/<?= $j->id_jenis_quisioner; ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i></a>
+                            <a href="<?= base_url('backend/deleteJenis'); ?>/<?= $j->id_jenis_quisioner; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
                         </td>
                     </tr>
                     <?php endforeach;  ?>

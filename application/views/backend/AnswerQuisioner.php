@@ -2,11 +2,7 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>Table <?= $jtable; ?></h3>
-              </div>
-            </div>
+            
 
             <div class="clearfix"></div>
             
@@ -14,7 +10,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><?= $jtable; ?></h2>
+                    <h2>Page : <?= $jtable; ?></h2>
                     
                     <div class="clearfix"></div>
                   </div>
@@ -50,8 +46,8 @@
                                 <td><?= $a->comments; ?></td>
                                 <td><?= $a->created_up; ?></td>
                                 <td>
-                                    <a href="<?= base_url('quisioner'); ?>" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                    <a href="<?= base_url('backend/deleteAnswerQuis'); ?>/<?= $a->kd_answer_quisioner; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                    <a href="<?= base_url('quisioner'); ?>" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></a>
+                                    <a href="<?= base_url('backend/deleteAnswerQuis'); ?>/<?= $a->kd_answer_quisioner; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
 
                                
                                   </td>

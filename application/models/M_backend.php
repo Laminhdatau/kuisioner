@@ -203,7 +203,7 @@ function editComments($kd_comments){
         $this->db->from('t_answer_quisioner');
         $this->db->join('t_quisioner','t_answer_quisioner.kd_quisioner = t_quisioner.kd_quisioner');
         $this->db->join('t_answer','t_answer_quisioner.id_answer = t_answer.id_answer');
-        $this->db->join('t_dosen_pengampu','t_answer_quisioner.kd_dosen_pengampu = t_dosen_pengampu.kd_dosen_pengampu');
+        $this->db->join('t_dosen_pengampu','t_answer_quisioner.nipy = t_dosen_pengampu.nipy');
         $this->db->join('t_mahasiswa','t_answer_quisioner.nim = t_mahasiswa.nim');
         $this->db->join('t_mk','t_answer_quisioner.kd_mk = t_mk.kd_mk');
         $query=$this->db->get();

@@ -1,14 +1,20 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Backend extends CI_Controller{
+	public function __construct(){
+		parent::__construct();
+		is_logged_in();
+		
+	}
 // ===========================================BEGIN QUISIONER Dosen================================================
     public function index()
 	{
 		$data['title']="Siakad Politeknik Gorontalo | Dashboard";
+		
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
-        $this->load->view('template/navbar');
-		$this->load->view('backend/Dashboard');
+        $this->load->view('template/navbar',$data);
+		$this->load->view('backend/Dashboard',$data);
         $this->load->view('template/footer');
 	}
 
@@ -68,17 +74,14 @@ class Backend extends CI_Controller{
 		$quis =$this->input->post('quisioner');
 		$stts =$this->input->post('status');
 		$created_at =$this->input->post('created_up');
-
 		$arr=[
 			'quisioner'=> $quis,
 			'id_jenis_quisioner'=>1,
 			'status'=>$stts,
 			'created_up'=>$created_at
 		];
-
 		$this->db->where('kd_quisioner', $kd_quis);
 		$this->db->update('t_quisioner',$arr);
-
 		redirect(base_url('backend/quisdosen'));
 	}
 	
@@ -104,6 +107,7 @@ class Backend extends CI_Controller{
 		$this->load->view('backend/QuisionerMataKuliah',$data);
         $this->load->view('template/footer');
 	}
+
 	public function formInputQuisMk(){
 		$data['title']="Siakad Politeknik Gorontalo | Tambah Mata Kuliah";
 		$data['jtable']="Kuis Mata Kuliah";
@@ -113,6 +117,7 @@ class Backend extends CI_Controller{
 		$this->load->view('backend/FormInputQuisMk');
         $this->load->view('template/footer');
 	}
+
 	public function fungsiInputQuisMk(){
 		date_default_timezone_set('ASIA/JAKARTA');
 		$quis =$this->input->post('quisioner');
@@ -178,13 +183,6 @@ class Backend extends CI_Controller{
 		$this->load->view('template/footer');
 	}
 
-
-
-	public function getDetail($id){
-		
-		
-	}
-
 	public function deleteAnswerQuis($kd_answer_quis){
 		$this->m_backend->deleteAnswerQuis($kd_answer_quis);
 		redirect(base_url('backend/hasildosen'));
@@ -195,8 +193,8 @@ class Backend extends CI_Controller{
 // ===========================================BEGIN ANSWER================================================
     public function getAnswer()
 	{
-		$data['title']="Siakad Politeknik Gorontalo | Pilihan Jawaban";
-		$data['jtable']="Pilihan Jawaban";
+		$data['title']="Siakad Politeknik Gorontalo | Options";
+		$data['jtable']="Options";
 		$data['answer']=$this->m_backend->getAnswer();
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
@@ -206,8 +204,8 @@ class Backend extends CI_Controller{
 	}
 
 	public function formInputAnswer(){
-		$data['title']="Siakad Politeknik Gorontalo | Tambah Pilihan Jawaban";
-		$data['jtable']="Pilihan Jawaban";
+		$data['title']="Siakad Politeknik Gorontalo | Tambah Options";
+		$data['jtable']="Options";
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
         $this->load->view('template/navbar');
@@ -226,8 +224,8 @@ class Backend extends CI_Controller{
 	}
 
 	public function formEditAnswer($id_answer){
-		$data['title']="Siakad Politeknik Gorontalo | Update Pilihan Jawaban";
-		$data['jtable']="Pilihan Jawaban";
+		$data['title']="Siakad Politeknik Gorontalo | Update Options";
+		$data['jtable']="Options";
 		$data['answer']=$this->m_backend->editAnswer($id_answer);
 		$this->load->view('template/header',$data);
 		$this->load->view('template/sidebar');
