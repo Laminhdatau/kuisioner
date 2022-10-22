@@ -2,6 +2,10 @@
 
 class Auth extends CI_Controller{
 
+    public function __construct(){
+        parent::__construct();
+        $this->load->library('form_validation');
+    }
 
  public function index()
     {
@@ -47,15 +51,15 @@ class Auth extends CI_Controller{
                         redirect('quisioner');
                     }
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
                     redirect('auth');
                 }
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">This email has not been activated!</div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">User belum di aktivasi!</div>');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email is not registered!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">User ini belum terdaftar</div>');
             redirect('auth');
         }
     }
@@ -67,7 +71,8 @@ function logout(){
 
   public function blocked()
     {
-        $this->load->view('blocked');
+        $data['title']="Access Forbidden";
+        $this->load->view('blocked',$data);
     }
 
 }

@@ -1,7 +1,5 @@
 <?php
 
-use LDAP\Result;
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Quisioner extends CI_Controller {
@@ -14,6 +12,7 @@ class Quisioner extends CI_Controller {
 	public function index()
 	{
 		$data['title']="Quisioner Dosen Pengampuh";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['quisdosen']=$this->m_quisioner->getQuisionerDosen();
 		$data['option']=$this->m_quisioner->getAnswer();
 		$data['dosen']=$this->m_quisioner->getDosenDetail();
@@ -60,6 +59,7 @@ class Quisioner extends CI_Controller {
 
 	public function getQuisMK(){
 		$data['title']="Quisioner Mata Kuliah";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['quismk']=$this->m_quisioner->getQuisionerMk();
 		$data['option']=$this->m_quisioner->getAnswer();
 		$data['dosen']=$this->m_quisioner->getDosenArr();
@@ -105,6 +105,7 @@ class Quisioner extends CI_Controller {
 
 	public function getMk(){
 		$data['title']="Quisioner Mata Kuliah";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$this->load->view('template/header',$data);
 		$this->load->view('template/navbar');
 		$this->load->view('template/sidebar',$data);

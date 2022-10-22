@@ -80,43 +80,15 @@
 
                 <?php 
                 $role_id =$this->session->userdata('role_id');
-                $queryMenu = "SELECT `t_user_menu`.`menu_id`, `menu`
-                                FROM `t_user_menu` JOIN `t_user_access_menu`
-                                  ON `t_user_menu`.`menu_id` = `t_user_access_menu`.`menu_id`
-                                WHERE `user_access_menu`.`role_id` = $role_id
-                            ORDER BY `user_access_menu`.`menu_id` ASC
+                $queryMenu = "SELECT `user_menu`.`menu_id`, `menu`
+                              FROM `user_menu` JOIN `user_access_menu`
+                                ON `user_menu`.`menu_id` = `user_access_menu`.`menu_id`
+                              WHERE `user_access_menu`.`role_id` = $role_id
+                              ORDER BY `user_access_menu`.`menu_id` ASC
                               ";
               $menu = $this->db->query($queryMenu)->result_array(); ?>  
               
 
-              <!-- LOOPING MENU -->
-              <?php foreach($menu as $sm): ?>
-                <h3><?= $sm['menu']; ?></h3>
-
-
-                 <!-- SIAPKAN SUB-MENU SESUAI MENU -->
-              <?php 
-              $menuId = $m['menu_id'];
-              $querySubMenu = "SELECT *
-                               FROM `t_user_sub_menu` JOIN `t_user_menu` 
-                                 ON `t_user_sub_menu`.`menu_id` = `t_user_menu`.`menu_id`
-                              WHERE `t_user_sub_menu`.`menu_id` = $menuId
-                                AND `t_user_sub_menu`.`is_active` = 1
-                              ";
-            $subMenu = $this->db->query($querySubMenu)->result_array();
-            ?>
-
-
-            <?php foreach($subMenu as $sm): ?>
-              <?php if($titile == $sm['title']): ?>
-
-                <?php else  : ?>
-
-                  <?php endif ; ?>
-
-
-            <?php endforeach; ?>
-            <?php endforeach; ?>
                   <li><a href="<?= base_url(); ?>"><i class="fa fa-home fa-fw" style="color:#75006a"></i> Dashboard</a>
                   <li><a><i class="fa fa-table fa-fw" style="color:#75006a"></i> Tables <span class="fa fa-chevron-down" style="color:#75006a"></span></a>
                     <ul class="nav child_menu">

@@ -10,7 +10,7 @@ class Backend extends CI_Controller{
     public function index()
 	{
 		$data['title']="Siakad Politeknik Gorontalo | Dashboard";
-		
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
         $this->load->view('template/navbar',$data);
@@ -22,6 +22,7 @@ class Backend extends CI_Controller{
 	{
 		$data['title']="Siakad Politeknik Gorontalo | Kuis Dosen";
 		$data['jtable']="Kuis Dosen";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['data']=$this->m_backend->getQuisionerDosen();
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
@@ -31,6 +32,7 @@ class Backend extends CI_Controller{
 	}
 	public function formInputQuisDosen(){
 		$data['title']="Siakad Politeknik Gorontalo | Tambah Kuis";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['jtable']="Kuis Dosen";
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
@@ -59,6 +61,7 @@ class Backend extends CI_Controller{
 
 	public function formEditQuisDosen($kd_quis){
 		$data['title']="Siakad Politeknik Gorontalo | Update Kuis Dosen";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['jtable']="Kuis Dosen";
 		$data['editquis']=$this->m_backend->editQuisDetail($kd_quis);
 		$data['jenisquis']=$this->m_backend->getJenis();
@@ -99,6 +102,7 @@ class Backend extends CI_Controller{
 	public function quisMataKuliah()
 	{
 		$data['title']="Siakad Politeknik Gorontalo | Mata Kuliah";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['jtable']="Kuis Mata Kuliah";
 		$data['data']=$this->m_backend->getQuisionerMataKuliah();
 		$this->load->view('template/header',$data);
@@ -110,6 +114,7 @@ class Backend extends CI_Controller{
 
 	public function formInputQuisMk(){
 		$data['title']="Siakad Politeknik Gorontalo | Tambah Mata Kuliah";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['jtable']="Kuis Mata Kuliah";
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
@@ -136,6 +141,7 @@ class Backend extends CI_Controller{
 	}
 	public function formEditQuisMk($kd_quis){
 		$data['title']="Siakad Politeknik Gorontalo |Quis Update Mata Kuliah";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['jtable']="Update Quis Mata Kuliah";
 		$data['editquis']=$this->m_backend->editQuisDetail($kd_quis);
 		$data['jenisquis']=$this->m_backend->getJenis();
@@ -174,6 +180,7 @@ class Backend extends CI_Controller{
 	
 	public function AnswerQuisioner(){
 		$data['title']="Siakad Politeknik Gorontalo | Response Mahasiswa";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['jtable']="Response";
 		$data['answer']=$this->m_backend->getAnswerQuisioner();
 		$this->load->view('template/header',$data);
@@ -194,6 +201,7 @@ class Backend extends CI_Controller{
     public function getAnswer()
 	{
 		$data['title']="Siakad Politeknik Gorontalo | Options";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['jtable']="Options";
 		$data['answer']=$this->m_backend->getAnswer();
 		$this->load->view('template/header',$data);
@@ -205,6 +213,7 @@ class Backend extends CI_Controller{
 
 	public function formInputAnswer(){
 		$data['title']="Siakad Politeknik Gorontalo | Tambah Options";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['jtable']="Options";
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
@@ -225,6 +234,7 @@ class Backend extends CI_Controller{
 
 	public function formEditAnswer($id_answer){
 		$data['title']="Siakad Politeknik Gorontalo | Update Options";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['jtable']="Options";
 		$data['answer']=$this->m_backend->editAnswer($id_answer);
 		$this->load->view('template/header',$data);
@@ -257,6 +267,7 @@ class Backend extends CI_Controller{
     public function getJenis()
 	{
 		$data['title']="Siakad Politeknik Gorontalo | Jenis Quisioner";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['jtable']="Jenis Kuisioner";
 		$data['jenis']=$this->m_backend->getJenis();
 		$this->load->view('template/header',$data);
@@ -268,6 +279,7 @@ class Backend extends CI_Controller{
 
 	public function formInputjenis_quisioner(){
 		$data['title']="Siakad Politeknik Gorontalo | Tambah Jenis Quisioner";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['jtable']="Jenis Kuisioner";
 		$this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
@@ -288,6 +300,7 @@ class Backend extends CI_Controller{
 
 	public function formEditJenis($id_jenis){
 		$data['title']="Siakad Politeknik Gorontalo | Update Jenis Quisioner";
+		$data['user'] = $this->db->get_where('t_user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['jtable']="Jenis Kuisioner";
 		$data['jenis']=$this->m_backend->editJenis($id_jenis);
 		$this->load->view('template/header',$data);
