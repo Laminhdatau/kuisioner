@@ -2,11 +2,6 @@
 
 class Auth extends CI_Controller{
 
-    public function __construct(){
-        parent::__construct();
-        $this->load->library('form_validation');
-    }
-
  public function index()
     {
         if ($this->session->userdata('username')) {
@@ -39,7 +34,7 @@ class Auth extends CI_Controller{
             // jika usernya aktif
             if ($user['is_active'] == 1) {
                 // cek password
-                if (password_verify($pass, $user['password'])) {
+                if (md5($pass, $user['password'])) {
                     $data = [
                         'username' => $user['username'],
                         'role_id' => $user['role_id']

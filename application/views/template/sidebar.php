@@ -75,7 +75,6 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu ">
               <div class="menu_section">
-                <ul class="nav side-menu ">
 
 
                 <?php 
@@ -83,17 +82,15 @@
                 $queryMenu = "SELECT `t_user_menu`.`menu_id`, `menu`
                                 FROM `t_user_menu` JOIN `t_user_access_menu`
                                   ON `t_user_menu`.`menu_id` = `t_user_access_menu`.`menu_id`
-                                WHERE `user_access_menu`.`role_id` = $role_id
-                            ORDER BY `user_access_menu`.`menu_id` ASC
+                                WHERE `t_user_access_menu`.`role_id` = $role_id
+                            ORDER BY `t_user_access_menu`.`menu_id` ASC
                               ";
               $menu = $this->db->query($queryMenu)->result_array(); ?>  
               
-
+                <ul class="nav side-menu">
               <!-- LOOPING MENU -->
-              <?php foreach($menu as $sm): ?>
-                <h3><?= $sm['menu']; ?></h3>
-
-
+              <?php foreach($menu as $m): ?>
+                <h3><?= $m['menu']; ?></h3>
                  <!-- SIAPKAN SUB-MENU SESUAI MENU -->
               <?php 
               $menuId = $m['menu_id'];
@@ -108,79 +105,29 @@
 
 
             <?php foreach($subMenu as $sm): ?>
-              <?php if($titile == $sm['title']): ?>
+              <?php if($title == $sm['title']): ?>
+              
+              <li class="active text-white"> 
+                
+              <?php else  : ?>
+              <li>
 
-                <?php else  : ?>
+              <?php endif ; ?>   
+              
+              <a href="<?= base_url($sm['url']); ?>">
+                  <i class="<?= $sm['icon']; ?>" 
+                  style="color:#75006a"></i> 
+                  <?= $sm['title']; ?>
+              </a>
 
-                  <?php endif ; ?>
+              </li>
 
-
+              
+           <?php endforeach; ?>
+           
             <?php endforeach; ?>
-            <?php endforeach; ?>
-                  <li><a href="<?= base_url(); ?>"><i class="fa fa-home fa-fw" style="color:#75006a"></i> Dashboard</a>
-                  <li><a><i class="fa fa-table fa-fw" style="color:#75006a"></i> Tables <span class="fa fa-chevron-down" style="color:#75006a"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="<?= base_url('backend/quisdosen'); ?>">Kuis Dosen</a></li>
-                      <li><a href="<?= base_url('backend/quismatakuliah'); ?>">Kuis Mata Kuliah</a></li>
-                      <li><a href="<?= base_url('backend/getAnswer'); ?>">Option Jawaban</a></li>
-                      <li><a href="<?= base_url('backend/getJenis'); ?>">Jenis Kuis</a></li>
-                      <li><a href="<?= base_url('backend/AnswerQuisioner'); ?>">Hasil Kuis</a></li>
-                    </ul>
-                  </li>
-                  
-                </ul>
-<!-- =======================================END -->
+                
 
-
-
-                <!-- =================================USER -->
-                <ul class="nav side-menu">
-                  <li>
-                    <a>
-                      <i class="fa fa-user fa-fw" style="color:#75006a"></i> Kuisioner <span class="fa fa-chevron-down" style="color:#75006a"></span>
-                    </a>
-                    <ul class="nav child_menu">
-                      <li><a href="<?= base_url('quisioner'); ?>">Kuis Dosen</a></li>
-                      <li><a href="<?= base_url('quisioner/getQuisMK'); ?>">Kuis Mk</a></li>
-                    </ul>
-                  </li>
-                  
-                </ul>
-<!-- =========================================END -->
-
-
-<!-- =============================================DOSEN -->
-
-                <ul class="nav side-menu">
-                  <li>
-                    <a>
-                      <i class="fa fa-table fa-fw" style="color:#75006a"></i> Grafik <span class="fa fa-chevron-down" style="color:#75006a"></span>
-                    </a>
-                    <ul class="nav child_menu">
-                      <li><a href="#">Grafik</a></li>
-                      <li><a href="#">Grafik Mata Kuliah</a></li>
-                    </ul>
-                  </li>
-                  
-                </ul>
-
-
-
-                <!-- =====================================END -->
-
-
-                <ul class="nav side-menu ">
-                  <li>
-                    <a>
-                      <i class="fa fa-table fa-fw" style="color:#75006a"></i> Grafik <span class="fa fa-chevron-down" style="color:#75006a"></span>
-                    </a>
-                    <ul class="nav child_menu">
-                      <li><a href="#">Grafik</a></li>
-                      <li><a href="#">Grafik Mata Kuliah</a></li>
-                    </ul>
-                  </li>
-                  
-                </ul>
               </div>
 
             </div>

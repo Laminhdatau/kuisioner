@@ -199,15 +199,14 @@ function editComments($kd_comments){
 
 // ========================================================BEGIN ANS QUIS=======================================================
     function getAnswerQuisioner(){
-        $this->db->select('*');
+        $this->db->select('aq.*,q.*,a.*');
         $this->db->from('t_answer_quisioner');
-        $this->db->join('t_quisioner','t_answer_quisioner.kd_quisioner = t_quisioner.kd_quisioner');
-        $this->db->join('t_answer','t_answer_quisioner.id_answer = t_answer.id_answer');
-        $this->db->join('t_dosen_pengampu','t_answer_quisioner.nipy = t_dosen_pengampu.nipy');
-        $this->db->join('t_mahasiswa','t_answer_quisioner.nim = t_mahasiswa.nim');
-        $this->db->join('t_mk','t_answer_quisioner.kd_mk = t_mk.kd_mk');
-        $query=$this->db->get();
-        return $query->result();
+        $this->db->join('t_quisioner q','aq.kd_quisioner=q.kd_quisioner');
+        $this->db->join('t_answer a','aq.id_answer=a.id_answer');
+        $this->db->where('kd_quisioner');
+        $this->db->order_by('kd_answer_quisioner');
+        
+        return $this->db->get();
     }
 
    
@@ -227,8 +226,5 @@ function editComments($kd_comments){
         return $this->db->get()->result();
     }
 // =============================================endcount=============================================
-
-
-
 
 }
